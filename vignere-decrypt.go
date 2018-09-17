@@ -22,9 +22,9 @@ func pos(x string) int{
 
 func main() {
 
-	fmt.Println(" Vignere Cipher v1 Decryption ")
-	fmt.Println(" ============================ ")
-	fmt.Println()
+	//fmt.Println(" Vignere Cipher v1 Decryption ")
+	//fmt.Println(" ============================ ")
+	//fmt.Println()
 
 	var alphabet string = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	var newkey string
@@ -39,7 +39,7 @@ func main() {
 	//Check if file size if less than 100KB.
 	fileInfo, err := os.Stat(fname)
 	if fileInfo.Size() < 100000 {
-		fmt.Println("Size of the file is {", fileInfo.Size(), "bytes } which is less than 100KB. Proceeding. . .")
+		//fmt.Println("Size of the file is {", fileInfo.Size(), "bytes } which is less than 100KB. Proceeding. . .")
 	} else {
 		fmt.Println("The file size is greater than 100KB. Please try again")
 		os.Exit(3)
@@ -49,7 +49,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Println("Contents of the file are: ", string(data))
+	//fmt.Println("Contents of the file are: ", string(data))
 	fmt.Println()
 	file.Close()
 
@@ -61,9 +61,9 @@ func main() {
 	match := re.FindAllString(ciphertextfile,-1)
 	ciphertextfile = strings.Join(match,"") //Joining string array to become a single string.
 	ciphertextfile = strings.Replace(ciphertextfile, " ", "", -1) //Removing whitespaces if any.
-	fmt.Println("Here is the extracted text from file: ",match)
-	fmt.Println("The key to be used for decryption is: ",key)
-	fmt.Println("The Ciphertext to be decrypted: ",ciphertextfile)
+	//fmt.Println("Here is the extracted text from file: ",match)
+	//fmt.Println("The key to be used for decryption is: ",key)
+	//fmt.Println("The Ciphertext to be decrypted: ",ciphertextfile)
 
 	//Make the size of key equal to plaintext size
 	j := 0
@@ -76,7 +76,7 @@ func main() {
 			j++
 		}
 	}
-	fmt.Println("The key to be used in the operation: ",newkey)
+	//fmt.Println("The key to be used in the operation: ",newkey)
 
 	//Decrypting the ciphertext into plaintext
 	m:=0
@@ -93,5 +93,5 @@ func main() {
 		}
 		m++
 	}
-	fmt.Println("The Plaintext is ", plaintext)
+	fmt.Println("The Decrypted text is ", plaintext)
 }
